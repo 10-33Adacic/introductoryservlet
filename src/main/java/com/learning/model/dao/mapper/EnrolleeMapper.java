@@ -20,7 +20,7 @@ public class EnrolleeMapper implements ObjectMapper<Enrollee> {
         for (Role role : Role.values())
             if (role.name().equals(rs.getObject("role")))
                 enrollee.setRole(role);
-        enrollee.setActive(rs.getBoolean("true"));
+        enrollee.setActive(rs.getBoolean("active"));
         return enrollee;
     }
 

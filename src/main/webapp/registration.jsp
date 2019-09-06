@@ -7,8 +7,16 @@
         <strong>Invalid email or password</strong>
     </div>
 </c:if>
-
+<br>
 <form action="${pageContext.request.contextPath}/introductory/registration" method="post">
+
+    <div class="form-group row">
+        <label class="col-sm-2 col-form-label"> Name </label>
+        <div class="col-sm-4">
+            <input type="text" name="name" class="form-control" placeholder="Name" required
+                   autofocus/>
+        </div>
+    </div>
 
     <div class="form-group row">
         <label class="col-sm-2 col-form-label"> Email </label>
@@ -25,13 +33,13 @@
                    required/>
         </div>
     </div>
-    <button type="submit" class="btn btn-primary">
+    <button type="submit" onClick="location.href='/introductory/login'" class="btn btn-info">
         Registration
     </button>
 </form>
 
-<div class="mt-1">
-    <a href="${pageContext.request.contextPath}/login.jsp">Login</a>
-</div>
+<%--<div class="mt-1">--%>
+    <%--<a href="${pageContext.request.contextPath}/login.jsp">Login</a>--%>
+<%--</div>--%>
 
 <%@ include file="parts/tail.jsp" %>

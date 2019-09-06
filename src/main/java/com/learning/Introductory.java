@@ -1,18 +1,35 @@
 package com.learning;
 
-import com.learning.controller.command.Command;
+import com.learning.controller.command.*;
+import com.learning.controller.command.Exception;
 import com.learning.model.service.EnrolleeService;
 
+import javax.servlet.ServletConfig;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.util.HashMap;
+import java.util.HashSet;
 import java.util.Map;
 
 public class Introductory extends HttpServlet {
     private Map<String, Command> commands = new HashMap<>();
+
+    public void init(ServletConfig servletConfig) {
+        EnrolleeService enrolleeService = new EnrolleeService();
+        servletConfig.getServletContext()
+                .setAttribute("loggedUsers", new HashSet<String>());
+        commands.put("login", new Login(enrolleeService));
+        commands.put("registration", new Registration(enrolleeService));
+        commands.put("logout", new LogOut());
+        commands.put("exception", new Exception());
+        commands.put("admin", new AdminRole());
+        commands.put("user", new EnrolleeRole());
+        commands.put("admin/userlist", new EnrolleeList(enrolleeService));
+
+    }
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
@@ -37,7 +54,7 @@ public class Introductory extends HttpServlet {
         request.getRequestDispatcher(page).forward(request, response);
     }
 
-    public EnrolleeService userService = new EnrolleeService();
+    public EnrolleeService enrolleeService = new EnrolleeService();
 //        servletConfig.getServletContext()
 //                .setAttribute("loggedUsers", new HashSet<String>());
 //        commands.put("login", new Login(userService));

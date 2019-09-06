@@ -24,6 +24,7 @@ public class Login implements Command {
     public String execute(HttpServletRequest request) {
         String email = request.getParameter("email");
         String password = request.getParameter("password");
+        //TODO refacror with optional
         if (email == null) return "/login.jsp";
         System.out.println("user enter email: "+ email + " " + password);
 

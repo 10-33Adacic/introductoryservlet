@@ -7,7 +7,7 @@
         <strong>Invalid email or password</strong>
     </div>
 </c:if>
-
+<br>
 <form action="${pageContext.request.contextPath}/introductory/login" method="post">
 
     <div class="form-group row">
@@ -25,13 +25,13 @@
             />
         </div>
     </div>
-    <button type="submit" class="btn btn-primary">
+    <button type="submit" class="btn btn-info">
         Login
     </button>
 </form>
 
-<div class="mt-1">
-    <a href="${pageContext.request.contextPath}/registration.jsp">Registration</a>
-</div>
+<%--<div class="mt-1">--%>
+    <%--<a href="${pageContext.request.contextPath}/registration.jsp">Registration</a>--%>
+<%--</div>--%>
 
 <%@ include file="parts/tail.jsp" %>
