@@ -1,4 +1,4 @@
-package com.learning.command;
+package com.learning.controller.command;
 
 import javax.servlet.http.HttpServletRequest;
 

@@ -10,7 +10,7 @@ import java.util.List;
 public class JDBCEnrolleeDao implements EnrolleeDao{
     private Connection connection;
 
-    public JDBCUserDao(Connection connection) {
+    public JDBCEnrolleeDao(Connection connection) {
         this.connection = connection;
     }
 

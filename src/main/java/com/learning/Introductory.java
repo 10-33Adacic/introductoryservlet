@@ -1,8 +1,8 @@
 package com.learning;
 
-import com.learning.command.Command;
+import com.learning.controller.command.Command;
+import com.learning.model.service.EnrolleeService;
 
-import javax.servlet.ServletConfig;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -29,16 +29,15 @@ public class Introductory extends HttpServlet {
     private void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         String path = request.getRequestURI();
-        path = path.replaceAll(".*/introductory/" , "");
-        Command command = commands.getOrDefault(path ,
-                (r)->"/index.jsp");
+        path = path.replaceAll(".*/introductory/", "");
+        Command command = commands.getOrDefault(path,
+                (r) -> "/index.jsp");
         System.out.println(command.getClass().getName());
         String page = command.execute(request);
-        request.getRequestDispatcher(page).forward(request,response);
+        request.getRequestDispatcher(page).forward(request, response);
     }
 
-    public void init(ServletConfig servletConfig) {
-        UserService userService = new UserService();
+    public EnrolleeService userService = new EnrolleeService();
 //        servletConfig.getServletContext()
 //                .setAttribute("loggedUsers", new HashSet<String>());
 //        commands.put("login", new Login(userService));
@@ -48,6 +47,4 @@ public class Introductory extends HttpServlet {
 //        commands.put("admin", new AdminRole());
 //        commands.put("user", new UserRole());
 //        commands.put("admin/userlist", new UserList(userService));
-
-    }
 }
