@@ -5,7 +5,7 @@ import javax.servlet.http.HttpSession;
 import java.util.HashSet;
 
 class CommandUtility {
-    static void setUserRole(HttpServletRequest request, String role, String email) {
+    static void setUserRole(HttpServletRequest request, Enum role, String email) {
         HttpSession session = request.getSession();
         session.setAttribute("userEmail", email);
         session.setAttribute("role", role);

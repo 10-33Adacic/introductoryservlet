@@ -3,6 +3,7 @@ package com.learning.model.service;
 import com.learning.model.dao.DaoFactory;
 import com.learning.model.dao.EnrolleeDao;
 import com.learning.model.entity.Enrollee;
+import com.learning.model.entity.Role;
 
 import java.sql.SQLException;
 import java.util.List;
@@ -17,12 +18,11 @@ public class EnrolleeService {
     }
 
     public void addUser(String name, String email, String password) throws SQLException {
-        String role = "USER";
         Enrollee newEnrollee = Enrollee.builder()
                 .name(name)
                 .email(email)
                 .password(password)
-                .role(role)
+                .role(Role.USER)
                 .active(true)
                 .build();
         enrolleeDao.add(newEnrollee);

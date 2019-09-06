@@ -5,7 +5,7 @@ public class Enrollee {
     private String name;
     private String email;
     private String password;
-    private String role;
+    private Role role;
     private boolean active;
 
     public boolean isActive() {
@@ -48,11 +48,11 @@ public class Enrollee {
         this.password = password;
     }
 
-    public String getRole() {
+    public Role getRole() {
         return role;
     }
 
-    public void setRole(String role) {
+    public void setRole(Role role) {
         this.role = role;
     }
 
@@ -85,7 +85,7 @@ public class Enrollee {
             return this;
         }
 
-        public Builder role(String role) {
+        public Builder role(Role role) {
             Enrollee.this.role = role;
             return this;
         }

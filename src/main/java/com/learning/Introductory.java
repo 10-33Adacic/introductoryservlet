@@ -46,5 +46,5 @@ public class Introductory extends HttpServlet {
 //        commands.put("exception", new Exception());
 //        commands.put("admin", new AdminRole());
 //        commands.put("user", new UserRole());
-//        commands.put("admin/userlist", new UserList(userService));
+//        commands.put("admin/userlist", new EnrolleeList(userService));
 }

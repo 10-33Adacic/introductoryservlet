@@ -1,6 +1,7 @@
 package com.learning.model.dao.mapper;
 
 import com.learning.model.entity.Enrollee;
+import com.learning.model.entity.Role;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -16,7 +17,9 @@ public class EnrolleeMapper implements ObjectMapper<Enrollee> {
         enrollee.setName(rs.getString("name"));
         enrollee.setEmail(rs.getString("email"));
         enrollee.setPassword(rs.getString("password"));
-        enrollee.setRole(rs.getString("role"));
+        for (Role role : Role.values())
+            if (role.name().equals(rs.getObject("role")))
+                enrollee.setRole(role);
         enrollee.setActive(rs.getBoolean("true"));
         return enrollee;
     }

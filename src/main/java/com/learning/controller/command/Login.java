@@ -1,6 +1,7 @@
 package com.learning.controller.command;
 
 import com.learning.model.entity.Enrollee;
+import com.learning.model.entity.Role;
 import com.learning.model.service.EnrolleeService;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
