@@ -1,4 +1,9 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
+
+<fmt:setLocale value="${sessionScope.lang}"/>
+<fmt:setBundle basename="messages"/>
+
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
     <a class="navbar-brand" href="/"></a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
@@ -11,18 +16,19 @@
             <li class="nav-item">
                 <a class="nav-link" href="${pageContext.request.contextPath}/introductory/"><i
                         <%--class="fas fa-home"--%>
-                ></i> </a>
+                ></i
+                        <%--class="fas fa-home"--%>> </a>
             </li>
             <li class="nav-item"><a class="nav-link"
-                                    href="${pageContext.request.contextPath}/introductory/registration">Registration </a>
+                                    href="${pageContext.request.contextPath}/introductory/registration"><fmt:message key="label.registration" /> </a>
             </li>
             <li class="nav-item"><a class="nav-link"
-                                    href="${pageContext.request.contextPath}/introductory/login">Login</a></li>
+                                    href="${pageContext.request.contextPath}/introductory/login"><fmt:message key="label.login" /></a></li>
             <li class="nav-item">
-                <a class="nav-link" href="${pageContext.request.contextPath}/">Edit profile</a>
+                <a class="nav-link" href="${pageContext.request.contextPath}/"><fmt:message key="label.edit.profile" /></a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="${pageContext.request.contextPath}/introductory/admin/userlist">User list </a>
+                <a class="nav-link" href="${pageContext.request.contextPath}/introductory/admin/userlist"><fmt:message key="label.user.list"/></a>
             </li>
 
         </ul>
@@ -32,7 +38,7 @@
         <c:if test="${sessionScope.userEmail ne null}">
             <div class="mr-3">
                 <form action="${pageContext.request.contextPath}/introductory/logout" method="post">
-                    <button type="submit" class="btn btn-info">Log out
+                    <button type="submit" class="btn btn-info"><fmt:message key="label.logout"/>
                         <i
                                 <%--class="fas fa-sign-out-alt"--%>
                         ></i>

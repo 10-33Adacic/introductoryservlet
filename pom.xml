@@ -56,6 +56,12 @@
           <version>1.4</version>
       </dependency>
 
+      <!--JSTL-->
+      <dependency>
+          <groupId>jstl</groupId>
+          <artifactId>jstl</artifactId>
+          <version>1.2</version>
+      </dependency>
       <!--Logger-->
       <dependency>
           <groupId>org.apache.logging.log4j</groupId>

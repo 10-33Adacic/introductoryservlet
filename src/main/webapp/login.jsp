@@ -11,7 +11,7 @@
 <form action="${pageContext.request.contextPath}/introductory/login" method="post">
 
     <div class="form-group row">
-        <label class="col-sm-2 col-form-label" for="emailInput"> Email </label>
+        <label class="col-sm-2 col-form-label" for="emailInput"><fmt:message key="label.email"/></label>
         <div class="col-sm-4">
             <input type="email" name="email" class="form-control" placeholder="Email" required
                    autofocus id="emailInput"/>
@@ -19,14 +19,14 @@
     </div>
 
     <div class="form-group row">
-        <label class="col-sm-2 col-form-label"> Password </label>
+        <label class="col-sm-2 col-form-label"><fmt:message key="label.password"/></label>
         <div class="col-sm-4 ">
             <input type="password" name="password" class="form-control" placeholder="Password"
             />
         </div>
     </div>
     <button type="submit" class="btn btn-info">
-        Login
+        <fmt:message key="label.login"/>
     </button>
 </form>
 
