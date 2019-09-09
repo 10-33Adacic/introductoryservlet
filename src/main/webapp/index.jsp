@@ -24,11 +24,6 @@
 
 <div class="container mt-2 pl-0">
 
-    <ul>
-    <li><a href="?sessionLocale=en"><fmt:message key="label.lang.en"/></a></li>
-    <li><a href="?sessionLocale=ua"><fmt:message key="label.lang.ua"/></a></li>
-    </ul>
-
     <c:if test="${requestScope.error eq true}">
     <div class="alert alert-danger" align="center">
     <strong>${requestScope.message}</strong>

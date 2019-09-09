@@ -4,7 +4,7 @@
 
 <c:if test="${requestScope.error eq true}">
     <div class="alert alert-danger" align="center">
-        <strong>Invalid email or password</strong>
+        <strong><fmt:message key="label.invalid.email.or.password"/></strong>
     </div>
 </c:if>
 <br>
@@ -13,7 +13,7 @@
     <div class="form-group row">
         <label class="col-sm-2 col-form-label"><fmt:message key="label.name"/></label>
         <div class="col-sm-4">
-            <input type="text" name="name" class="form-control" placeholder="Name" required
+            <input type="text" name="name" class="form-control" placeholder="<fmt:message key="label.name"/>" required
                    autofocus/>
         </div>
     </div>
@@ -29,7 +29,7 @@
     <div class="form-group row">
         <label class="col-sm-2 col-form-label"><fmt:message key="label.password"/></label>
         <div class="col-sm-4 ">
-            <input type="password" name="password" class="form-control" placeholder="Password"
+            <input type="password" name="password" class="form-control" placeholder="<fmt:message key="label.password"/>"
                    required/>
         </div>
     </div>
